@@ -1,36 +1,21 @@
-import './App.css'
-import { useState, useEffect } from 'react';
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import ListaPokemon from './Components/ListaPokemon.jsx';
+import Detalles from './Components/Detalles.jsx';
 
-function App() {
-  const [pokemonLIst, setPokemonList ] = useState([]);
-  const [ loading, setLoading ] = useState(true);
-
-  useEffect(() => {
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=20')
-        .then(res => res.json())
-        .then(data => {
-          setPokemonList(data.results);
-          setLoading(false);
-        })
-        .catch(err => {
-          console.error( 'Error fetching pokemon: ', err);
-          setLoading(false);
-        });
-  }, []);
-
-  if (loading) return <p> Cargando Pokemon... </p>;
-
-  return (
+function App(){
+  return(
     <div className='App'>
-      <h1> Pokedex </h1>
-        <ul>
-          {pokemonLIst.map(pokemon => (
-            <li key={pokemon.name}> {pokemon.name} </li>
-          ))}
-        </ul>
+      <h1>Pokedex</h1>
+      <Routes>
+        <Route path="/" element={<ListaPokemon/>}/>
+        <Route path="/pokemon/:name" element={<Detalles/>}/>
+      </Routes>
     </div>
   );
 }
+export default App;
+
 
 {/*   
   Explicacion del codigo hasta este punto:
@@ -40,4 +25,3 @@ function App() {
   Cuando termina, lista los nombres  
   */}
 
-export default App
