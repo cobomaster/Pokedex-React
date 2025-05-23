@@ -1,48 +1,53 @@
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
-function Detalles(){
-    const { name } = useParams(); // Aquí capturamos el nombre del pokemon de la URL
-    const [pokemon, setPokemon] = useState(null);
-    const [loading, setLoading] = useState(null);
-    const [error, setError] = useState(null);
+function Detalles() {
+  const { name } = useParams();
+  const [pokemon, setPokemon] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-        .then(res => {
-            if(!res.ok) throw new Error ('Pokemon no encontrado');
-            return res.json();
-        })
-        .then(data => {
-            setPokemon(data);
-            setLoading(false);
-        })
-        .catch(err => {
-            setError(err.message);
-            setLoading(false);
-        });
-    }, [name]);
+  useEffect(() => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+      .then(res => res.json())
+      .then(data => {
+        setPokemon(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error al cargar detalles del Pokémon: ', err);
+        setLoading(false);
+      });
+  }, [name]);
 
-    if (loading) return <p>Cargando detalles... </p>
-    if (error) return <p> Error: {error} </p> 
+  if (loading) return <p>Cargando detalles...</p>;
+  if (!pokemon) return <p>Pokémon no encontrado</p>;
 
-    return(
-        <div style={{ textAlign: 'center'}}>
-            <h2 style={{ textTransform: 'capitalize'}}> {pokemon.name} </h2>
-            <img 
-            src={pokemon.sprites.front_default}
-            alt={pokemon.name}
-            width="150"
-            height="150"
-            />
-            <p><strong> Altura: </strong>{pokemon.height}</p>
-            <p><strong> Peso: </strong>{pokemon.weight}</p>
-            <p><strong> Tipos: </strong>{pokemon.types.map( t => t.type.name).join (', ')} </p>
-        </div>
-    );
+  return (
+    <div>
+      <h2 style={{ textTransform: 'capitalize' }}>{pokemon.name}</h2>
+      <img
+        src={pokemon.sprites.front_default}
+        alt={pokemon.name}
+        width="150"
+        height="150"
+      />
+      <p>Peso: {pokemon.weight}</p>
+      <p>Altura: {pokemon.height}</p>
+      <p>Tipos:</p>
+      <ul>
+        {pokemon.types.map(t => (
+          <li key={t.type.name}>{t.type.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default Detalles;
+
+
+
+
 
 
 {/*  

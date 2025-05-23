@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function ListaPokemon(){
     const [pokemonList, setPokemonList] = useState([]);
@@ -24,14 +25,19 @@ function ListaPokemon(){
     if (loading) return <p>Cargando Pokémon...</p>;
 
   return (
-    <ul style={{ listStyle: 'none', padding: 0 }}>
-      {pokemonList.map(pokemon => {
+    <ul style={{ listStyle: 'none', padding: 0}}>
+      {pokemonList.map(pokemon =>{
         const id = getIdFromUrl(pokemon.url);
         const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
-        return (
-          <li key={pokemon.name} style={{ display: 'flex', alignItems: 'center', marginBottom: 10 }}>
-            <img src={imageUrl} alt={pokemon.name} width="50" height="50" style={{ marginRight: 10 }} />
-            <span style={{ textTransform: 'capitalize' }}>{pokemon.name}</span>
+        return(
+          <li key={pokemon.name} style={{ marginBottom: 10}}>
+            <Link
+            to={`/pokemon/${pokemon.name}`}
+            style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color:'inherit'}}
+            >
+              <img src={imageUrl} alt={pokemon.name} width="50" height="50" style={{ marginRight: 10}}/>
+              <span style={{ textTransform: 'capitalize'}}> {pokemon.name} </span>
+            </Link>
           </li>
         );
       })}
