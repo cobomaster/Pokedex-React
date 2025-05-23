@@ -1,5 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import Navegacion from './Components/Navegacion.jsx';
 import ListaPokemon from './Components/ListaPokemon.jsx';
 import Detalles from './Components/Detalles.jsx';
 
@@ -7,9 +8,12 @@ function App(){
   return(
     <div className='App'>
       <h1>Pokedex</h1>
+      <Navegacion/>
       <Routes>
         <Route path="/" element={<ListaPokemon/>}/>
         <Route path="/pokemon/:name" element={<Detalles/>}/>
+        {/* Pagina de "equipo" la dejamos aqui vacia de momento */}
+        <Route path="/equipo" element={<p> Mi equipo (en construccion) </p>} />
       </Routes>
     </div>
   );
