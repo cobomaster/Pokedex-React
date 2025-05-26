@@ -28,16 +28,16 @@ function Detalles(){
     });
   }, [nombre]);
 
-if (loading) return <p className='loading'>Cargando...</p>;
+if (loading) return <p className='cargando'>Cargando...</p>;
 if (!pokemon) return <p> Pokemon no encontrado </p>;
 
  return (
-    <div className='detalles-container'>
-      <h2 className='detalles-name'> {pokemon.name}</h2>
+    <div className='Contenedor'>
+      <h2 className='Nombre'> {pokemon.name}</h2>
       <img
         src={pokemon.sprites.front_default}
         alt={pokemon.name}
-        className='detalles-img'
+        className='Foto'
       />
       <p>Altura: {pokemon.height}</p>
       <p>Peso: {pokemon.weight}</p>
