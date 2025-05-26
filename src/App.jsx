@@ -4,20 +4,20 @@ import Navegacion from './Components/Navegacion.jsx';
 import ListaPokemon from './Components/ListaPokemon.jsx';
 import Detalles from './Components/Detalles.jsx';
 
-function App(){
-  return(
+function App() {
+  return (
     <div className='App'>
       <h1>Pokedex</h1>
-      <Navegacion/>
+      <Navegacion />
       <Routes>
-        <Route path="/" element={<ListaPokemon/>}/>
-        <Route path="/pokemon/:nombre" element={<Detalles/>}/>
-        {/* Pagina de "equipo" la dejamos aqui vacia de momento */}
-        <Route path="/equipo" element={<p> Mi equipo (en construccion) </p>} />
+        <Route path="/" element={<ListaPokemon />} />
+        <Route path="/pokemon/:nombre" element={<Detalles />} />
+        <Route path="/equipo" element={<p>Mi equipo (en construcción)</p>} />
       </Routes>
     </div>
   );
 }
+
 export default App;
 
 

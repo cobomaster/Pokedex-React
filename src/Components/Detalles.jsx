@@ -1,5 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import './Detalles.css';
+
 
 function Detalles(){
   const {nombre} = useParams();
@@ -26,17 +28,16 @@ function Detalles(){
     });
   }, [nombre]);
 
-if (loading) return <p>Cargando...</p>;
+if (loading) return <p className='loading'>Cargando...</p>;
 if (!pokemon) return <p> Pokemon no encontrado </p>;
 
  return (
-    <div style={{ textAlign: 'center' }}>
-      <h2 style={{ textTransform: 'capitalize' }}>{pokemon.name}</h2>
+    <div className='detalles-container'>
+      <h2 className='detalles-name'> {pokemon.name}</h2>
       <img
         src={pokemon.sprites.front_default}
         alt={pokemon.name}
-        width="150"
-        height="150"
+        className='detalles-img'
       />
       <p>Altura: {pokemon.height}</p>
       <p>Peso: {pokemon.weight}</p>

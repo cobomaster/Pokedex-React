@@ -1,0 +1,61 @@
+.item {
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  margin: 10px 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+}
+
+h1 {
+  color: #cc0000;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.lista {
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Nombre {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.back-button {
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.back-button:hover {
+  background-color: #a30000;
+}

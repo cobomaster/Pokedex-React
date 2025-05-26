@@ -1,0 +1,41 @@
+.loading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.detalles-container {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 350px;
+  margin: 1rem auto;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+  text-align: center;
+}
+
+.detalles-name {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.detalles-img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+
+.detalles-container p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #444;
+}
