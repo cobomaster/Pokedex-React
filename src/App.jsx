@@ -11,7 +11,7 @@ function App(){
       <Navegacion/>
       <Routes>
         <Route path="/" element={<ListaPokemon/>}/>
-        <Route path="/pokemon/:name" element={<Detalles/>}/>
+        <Route path="/pokemon/:nombre" element={<Detalles/>}/>
         {/* Pagina de "equipo" la dejamos aqui vacia de momento */}
         <Route path="/equipo" element={<p> Mi equipo (en construccion) </p>} />
       </Routes>

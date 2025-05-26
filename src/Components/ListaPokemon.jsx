@@ -6,7 +6,7 @@ function ListaPokemon(){
     const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=20')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=100')
     .then(res => res.json())
     .then(data => {
         setPokemonList(data.results);
@@ -30,13 +30,10 @@ function ListaPokemon(){
         const id = getIdFromUrl(pokemon.url);
         const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
         return(
-          <li key={pokemon.name} style={{ marginBottom: 10}}>
-            <Link
-            to={`/pokemon/${pokemon.name}`}
-            style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color:'inherit'}}
-            >
-              <img src={imageUrl} alt={pokemon.name} width="50" height="50" style={{ marginRight: 10}}/>
-              <span style={{ textTransform: 'capitalize'}}> {pokemon.name} </span>
+          <li key={pokemon.name} style={{ display: 'flex', alignItems:'center', marginBottom: 10 }}>
+            <Link to ={`/pokemon/${pokemon.name}`} style={{ display: 'flex', alignItems: 'center', textDecoration:'none', color:'inherit'}}>
+            <img src={imageUrl} alt={pokemon.name} width="50" height="50" style={{ marginRight: 10}} />
+            <span style={{ textTransform: 'capitalize' }}>{pokemon.name}</span>
             </Link>
           </li>
         );
@@ -44,7 +41,6 @@ function ListaPokemon(){
     </ul>
   );
 }
-
 export default ListaPokemon;
 
 {/*  
