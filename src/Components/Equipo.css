@@ -1,0 +1,25 @@
+.Equipo1{
+    padding: 1rem;
+}
+
+.ListaEquipo{
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.itemEquipo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f3f3f3;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.Vacío{
+    font-style: italic;
+    color: gray;
+}
