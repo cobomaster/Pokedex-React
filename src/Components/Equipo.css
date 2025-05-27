@@ -1,12 +1,29 @@
-.Equipo1{
-    padding: 1rem;
+.cabecero{
+display: flex;
+align-items: center;
+justify-content: space-evenly;
 }
 
+.Equipo1{
+    padding: 1rem;
+    margin: 10px;
+}
+
+.pokeball{
+    width: 50px;
+    height: 50px;
+    background-image: url('./Pokeboll.gif');
+}
 .ListaEquipo{
-    list-style: none;
-    padding: 0;
-    display: grid;
-    gap: 1rem;
+   color: crimson;
+   display: flex;
+   flex-direction: column;
+}
+
+.ListaEquipo:hover{
+    cursor: pointer;
+    color: darkred;
+    text-decoration: underline;
 }
 
 .itemEquipo{
@@ -17,9 +34,23 @@
     border-radius: 10px;
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+.itemEquipo:hover{
+    background: black;
+    transform: scale(1.02);
+    cursor: pointer;
+    background-image: url('./Pokeboll.gif');
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
 .Vacío{
     font-style: italic;
     color: gray;
+}
+
+.h2{
+    color: crimson
 }

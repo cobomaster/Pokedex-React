@@ -28,8 +28,10 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Pokedex</h1>
+      <h1 className='h1'>Pokedex</h1>
+    <div className='menu'>
       <Navegacion />
+    </div>
       <Routes>
         <Route path='/' element={<ListaPokemon equipo={equipo} setEquipo={setEquipo} />} />
         <Route path='/pokemon/:nombre' element={<Detalles equipo={equipo} setEquipo={setEquipo} />} />

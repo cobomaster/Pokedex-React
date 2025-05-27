@@ -32,7 +32,7 @@ function Detalles({ equipo, setEquipo }) {
 
     // Verifica si ya está en el equipo
     if (equipo.some(p => p.name === pokemon.name)) {
-      alert('Este Pokémon ya está en tu equipo');
+      alert(`${pokemon.name} ya está en tu equipo`);
       return;
     }
 

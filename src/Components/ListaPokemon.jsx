@@ -8,7 +8,7 @@ function ListaPokemon() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=200')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=151') // Solo vamos a usar la primera Gen
       .then(res => res.json())
       .then(data => {
         setPokemonList(data.results);
