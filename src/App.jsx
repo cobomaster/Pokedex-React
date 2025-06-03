@@ -43,13 +43,3 @@ function App() {
 
 export default App;
 
-
-
-{/*   
-  Explicacion del codigo hasta este punto:
-  Usamos useEffect para hacer fetch cuando el componente se monta
-  Guarda la lista de Pokemon en el estado pokemonList
-  Mientras carga, muestra "Cargando Pokemon"
-  Cuando termina, lista los nombres  
-  */}
-

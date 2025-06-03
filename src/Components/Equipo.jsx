@@ -7,19 +7,18 @@ function Equipo({ equipo, eliminarPokemon }) {
 
   return (
     <div className="Equipo1">
-      <div className='cabecero'>
-      <h2 className='h2'>Mi equipo Pokémon</h2>
-      <img className='pokeball' />
+      <div className="cabecero">
+        <h2 className="h2">Mi equipo Pokémon</h2>
       </div>
 
       <div className="ListaEquipo">
         {equipo.map((pokemon, index) => (
           <div className="itemEquipo" key={index}>
-            <img src={pokemon.imageUrl} alt={pokemon.name} />
-            &nbsp;
-            <h3>{pokemon.name}</h3>
-            &nbsp;
-            <button onClick={() => eliminarPokemon(pokemon.name)}>Eliminar</button>
+            <img src={pokemon.imageUrl} alt={pokemon.name} className="imagen-equipo" />
+            <h3 className="nombre-pokemon">{pokemon.name}</h3>
+            <button onClick={() => eliminarPokemon(pokemon.name)} className="btn-eliminar">
+              Eliminar
+            </button>
           </div>
         ))}
       </div>

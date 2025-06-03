@@ -8,7 +8,7 @@ function ListaPokemon() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151') // Solo vamos a usar la primera Gen
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
       .then(res => res.json())
       .then(data => {
         setPokemonList(data.results);
@@ -47,8 +47,6 @@ function ListaPokemon() {
               src={imageUrl}
               alt={pokemon.name}
               className="foto"
-              width="50"
-              height="50"
             />
             <span className="nombre">{pokemon.name}</span>
           </li>
@@ -59,10 +57,3 @@ function ListaPokemon() {
 }
 
 export default ListaPokemon;
-
-{/*  
-  -- ListaPokemon carga y guarda una lista de Pokémon desde la API
-  -- Mientras carga, muestra "Cargando Pokemon"
-  -- Cuando carga, muestra una lista con imagen y nombre de cada pokemon
-  -- Extrae el ID de cada Pokemon para mostrar su imagen correcta
-  */}

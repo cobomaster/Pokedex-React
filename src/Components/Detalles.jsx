@@ -30,13 +30,11 @@ function Detalles({ equipo, setEquipo }) {
   const añadirAlEquipo = () => {
     if (!pokemon) return;
 
-    // Verifica si ya está en el equipo
     if (equipo.some(p => p.name === pokemon.name)) {
       alert(`${pokemon.name} ya está en tu equipo`);
       return;
     }
 
-    // Verifica límite de equipo
     if (equipo.length >= 6) {
       alert('Tu equipo ya tiene 6 Pokémon');
       return;
@@ -59,8 +57,7 @@ function Detalles({ equipo, setEquipo }) {
       <img
         src={pokemon.sprites.front_default}
         alt={pokemon.name}
-        width="150"
-        height="150"
+        className="imagen-pokemon"
       />
       <p>Altura: {pokemon.height}</p>
       <p>Peso: {pokemon.weight}</p>
